@@ -1,0 +1,667 @@
+WindowManager:
+    MyGrid:
+    SecLay:
+    ThirdLay:
+        
+
+<MyGrid>
+    canvas.before:
+        Color:
+            rgba:(11/255,32/255,39/255,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    name: 'first'
+    subjek: subjek
+    verb: verb
+    objek: objek 
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width , root.height
+        cols : 1
+        padding: 50
+        spacing: 20
+        GridLayout:
+            cols:1
+            Label:
+                text:"INGLISH"
+                font_size: '30'
+        GridLayout:
+            color: (255,255,255,1)
+            row_default_height : 30
+            cols : 1
+            spacing:10
+            canvas.before:
+                Color:
+                    rgba: (64/255,121/255,140/255,1)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]
+            TextInput:
+                size_hint_y: None
+                height:40
+                pos_hint : {"center_x":0.5}
+                background_normal:""
+                background_color:(0,0,0,0)
+                id : subjek
+                text: "SUBJECT"
+                color: (255,255,255,1)
+                multiline : False
+        GridLayout:
+            size: root.width , root.height
+            cols : 1
+            spacing:10
+            canvas.before:
+                Color:
+                    rgba: (64/255,121/255,140/255,1)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]
+            TextInput:
+                size_hint_y: None
+                height:40
+                pos_hint : {"center_x":0.5}
+                background_normal:""
+                background_color:(0,0,0,0)
+                id : verb
+                text: "VERB"
+                color:(255,255,255,1)
+                multiline : False
+        GridLayout:
+            size: root.width , root.height
+            cols : 1
+            spacing:10
+            canvas.before:
+                Color:
+                    rgba: (64/255,121/255,140/255,1)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]
+            TextInput:
+                size_hint_y: None
+                height:40
+                pos_hint : {"center_x":0.5}
+                text: "OBJECT"
+                background_normal:""
+                background_color:(0,0,0,0)
+                id: objek
+                color:(207/255,215/255,199/255,1)
+                multiline : False
+        GridLayout:
+            size: root.width , root.height
+            #pos_hint : {"center_x":0.5}
+            cols : 1
+            spacing: 100
+            padding: 20
+            Button:
+                #size_hint: 0.2,0.1
+                size_hint_y: None
+                height:40
+                pos_hint : {"center_x":0.5}
+                text : 'PILIH'
+                color : (11/255,32/255,39/255,1)
+                font_size:'15'
+                on_press: root.btn_pilih()
+                on_release: 
+                    app.root.current = 'second'
+                    root.manager.transition.direction = "left"                        
+                background_normal:""
+                background_color:(0,0,0,0)
+                canvas.before:
+                    Color:
+                        rgba: (207/255,215/255,199/255,1)
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10]
+
+<SecLay>
+    name:'second'
+    id: pilihan
+    canvas.before:
+        Color:
+            rgba:(11/255,32/255,39/255,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width , root.height
+        cols : 1
+        padding: 20
+        spacing: 20
+        GridLayout:
+            size: root.width , root.height
+            cols: 1
+            padding: 10
+            spacing: 10
+            Button:
+                #id:hasiltext
+                #size_hint: 0.2,0.1
+                size_hint_y: None
+                height:40
+                pos_hint : {"center_x":0.5}
+                text : 'Simple Present'
+                color : (11/255,32/255,39/255,1)
+                font_size:'15'
+                on_press: 
+                    root.btn_simpres()
+                on_release: 
+                    app.root.current = 'three'
+                    root.manager.transition.direction = "left"                        
+                background_normal:""
+                background_color:(0,0,0,0)
+                canvas.before:
+                    Color:
+                        rgba: (207/255,215/255,199/255,1)
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10]
+            Button:
+                #id:hasiltext
+                #size_hint: 0.2,0.1
+                size_hint_y: None
+                height:40
+                pos_hint : {"center_x":0.5}
+                text : 'Present Continuous'
+                color : (11/255,32/255,39/255,1)
+                font_size:'15'
+                on_press: root.btn_prescon()
+                on_release: 
+                    app.root.current = 'three'
+                    root.manager.transition.direction = "left"                        
+                background_normal:""
+                background_color:(0,0,0,0)
+                canvas.before:
+                    Color:
+                        rgba: (207/255,215/255,199/255,1)
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10]
+            
+            Button:
+                #id:hasiltext
+                #size_hint: 0.2,0.1
+                size_hint_y: None
+                height:40
+                pos_hint : {"center_x":0.5}
+                text : 'Present Perfect'
+                color : (11/255,32/255,39/255,1)
+                font_size:'15'
+                on_press: root.btn_presperf()
+                on_release: 
+                    app.root.current = 'three'
+                    root.manager.transition.direction = "left"                        
+                background_normal:""
+                background_color:(0,0,0,0)
+                canvas.before:
+                    Color:
+                        rgba: (207/255,215/255,199/255,1)
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10]
+            
+            Button:
+                #id:hasiltext
+                #size_hint: 0.2,0.1
+                size_hint_y: None
+                height:40
+                pos_hint : {"center_x":0.5}
+                text : 'Present Perfect Continuous'
+                color : (11/255,32/255,39/255,1)
+                font_size:'15'
+                on_press: root.btn_presperfcon()
+                on_release: 
+                    app.root.current = 'three'
+                    root.manager.transition.direction = "left"                        
+                background_normal:""
+                background_color:(0,0,0,0)
+                canvas.before:
+                    Color:
+                        rgba: (207/255,215/255,199/255,1)
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10]
+            
+            Button:
+                #id:hasiltext
+                #size_hint: 0.2,0.1
+                size_hint_y: None
+                height:40
+                pos_hint : {"center_x":0.5}
+                text : 'Simple Past'
+                color : (11/255,32/255,39/255,1)
+                font_size:'15'
+                on_press: root.btn_simpast()
+                on_release: 
+                    app.root.current = 'three'
+                    root.manager.transition.direction = "left"                        
+                background_normal:""
+                background_color:(0,0,0,0)
+                canvas.before:
+                    Color:
+                        rgba: (207/255,215/255,199/255,1)
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10]
+
+            Button:
+                #id:hasiltext
+                #size_hint: 0.2,0.1
+                size_hint_y: None
+                height:40
+                pos_hint : {"center_x":0.5}
+                text : 'Past Continuous'
+                color : (11/255,32/255,39/255,1)
+                font_size:'15'
+                on_press: root.btn_pastcon()
+                on_release: 
+                    app.root.current = 'three'
+                    root.manager.transition.direction = "left"                        
+                background_normal:""
+                background_color:(0,0,0,0)
+                canvas.before:
+                    Color:
+                        rgba: (207/255,215/255,199/255,1)
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10]
+            
+            Button:
+                #id:hasiltext
+                #size_hint: 0.2,0.1
+                size_hint_y: None
+                height:40
+                pos_hint : {"center_x":0.5}
+                text : 'Past Perfect'
+                color : (11/255,32/255,39/255,1)
+                font_size:'15'
+                on_press: root.btn_pastperf()
+                on_release: 
+                    app.root.current = 'three'
+                    root.manager.transition.direction = "left"                        
+                background_normal:""
+                background_color:(0,0,0,0)
+                canvas.before:
+                    Color:
+                        rgba: (207/255,215/255,199/255,1)
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10]
+            
+            Button:
+                #id:hasiltext
+                #size_hint: 0.2,0.1
+                size_hint_y: None
+                height:40
+                pos_hint : {"center_x":0.5}
+                text : 'Past Perfect Continuous'
+                color : (11/255,32/255,39/255,1)
+                font_size:'15'
+                on_press: root.btn_pastperfcon()
+                on_release: 
+                    app.root.current = 'three'
+                    root.manager.transition.direction = "left"                        
+                background_normal:""
+                background_color:(0,0,0,0)
+                canvas.before:
+                    Color:
+                        rgba: (207/255,215/255,199/255,1)
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10]
+            
+            Button:
+                #id:hasiltext
+                #size_hint: 0.2,0.1
+                size_hint_y: None
+                height:40
+                pos_hint : {"center_x":0.5}
+                text : 'Simple Future'
+                color : (11/255,32/255,39/255,1)
+                font_size:'15'
+                on_press: root.btn_simpfut()
+                on_release: 
+                    app.root.current = 'three'
+                    root.manager.transition.direction = "left"                        
+                background_normal:""
+                background_color:(0,0,0,0)
+                canvas.before:
+                    Color:
+                        rgba: (207/255,215/255,199/255,1)
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10]
+            
+            Button:
+                #id:hasiltext
+                #size_hint: 0.2,0.1
+                size_hint_y: None
+                height:40
+                pos_hint : {"center_x":0.5}
+                text : 'Future Continuous'
+                color : (11/255,32/255,39/255,1)
+                font_size:'15'
+                on_press: root.btn_futcon()
+                on_release: 
+                    app.root.current = 'three'
+                    root.manager.transition.direction = "left"                        
+                background_normal:""
+                background_color:(0,0,0,0)
+                canvas.before:
+                    Color:
+                        rgba: (207/255,215/255,199/255,1)
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10]
+            
+            Button:
+                #id:hasiltext
+                #size_hint: 0.2,0.1
+                size_hint_y: None
+                height:40
+                pos_hint : {"center_x":0.5}
+                text : 'Future Perfect'
+                color : (11/255,32/255,39/255,1)
+                font_size:'15'
+                on_press: root.btn_futper()
+                on_release: 
+                    app.root.current = 'three'
+                    root.manager.transition.direction = "left"                        
+                background_normal:""
+                background_color:(0,0,0,0)
+                canvas.before:
+                    Color:
+                        rgba: (207/255,215/255,199/255,1)
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10]
+            
+            Button:
+                #id:hasiltext
+                #size_hint: 0.2,0.1
+                size_hint_y: None
+                height:40
+                pos_hint : {"center_x":0.5}
+                text : 'Future Perfect Continuous'
+                color : (11/255,32/255,39/255,1)
+                font_size:'15'
+                on_press: root.btn_futpercon()
+                on_release: 
+                    app.root.current = 'three'
+                    root.manager.transition.direction = "left"                        
+                background_normal:""
+                background_color:(0,0,0,0)
+                canvas.before:
+                    Color:
+                        rgba: (207/255,215/255,199/255,1)
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10]
+            
+            Button:
+                #id:hasiltext
+                #size_hint: 0.2,0.1
+                size_hint_y: None
+                height:40
+                pos_hint : {"center_x":0.5}
+                text : 'Past Future'
+                color : (11/255,32/255,39/255,1)
+                font_size:'15'
+                on_press: root.btn_pastfut()
+                on_release: 
+                    app.root.current = 'three'
+                    root.manager.transition.direction = "left"                        
+                background_normal:""
+                background_color:(0,0,0,0)
+                canvas.before:
+                    Color:
+                        rgba: (207/255,215/255,199/255,1)
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10]
+            
+            Button:
+                #id:hasiltext
+                #size_hint: 0.2,0.1
+                size_hint_y: None
+                height:40
+                pos_hint : {"center_x":0.5}
+                text : 'Past Future Continuous'
+                color : (11/255,32/255,39/255,1)
+                font_size:'15'
+                on_press: root.btn_pastfutcon()
+                on_release: 
+                    app.root.current = 'three'
+                    root.manager.transition.direction = "left"                        
+                background_normal:""
+                background_color:(0,0,0,0)
+                canvas.before:
+                    Color:
+                        rgba: (207/255,215/255,199/255,1)
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10]
+
+
+
+<ThirdLay>
+    name: 'three'
+    id: tilu
+    BoxLayout:
+        orientation: 'vertical'
+        size: root.width,root.height
+        cols:1
+        padding : 10
+        color: (11/255,32/255,39/255,1)
+        GridLayout:
+            color: (11/255,32/255,39/255,1)
+            row_default_height : 30
+            cols : 1
+            spacing:10
+            padding : 50
+            canvas.before:
+                Color:
+                    rgba: (207/255,215/255,199/255,1)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]
+            Label:
+                size_hint_y: None
+                height:40
+                pos_hint : {"center_x":0.5}
+                background_normal:""
+                background_color:(0,0,0,0)
+                id : hasil
+                text: root.kalimat
+                font_size:'50'
+                color: (255,255,255,1)
+                multiline : False
+        GridLayout:
+            cols: 2
+            size: root.width,root.height
+            padding:30
+            spacing:20
+            Label:
+                id:labelverbone
+                text:"Verb1"
+                background_normal:""
+                background_color:(0,0,0,0)
+                color : (11/255,32/255,39/255,1)
+                canvas.before:
+                    Color:
+                        rgba: (207/255,215/255,199/255,1)
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10]
+            GridLayout:
+                color: (255,255,255,1)
+                row_default_height : 30
+                cols : 1
+                spacing:10
+                padding : 10
+                canvas.before:
+                    Color:
+                        rgba: (207/255,215/255,199/255,1)
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10]
+                Label:
+                    size_hint_y: None
+                    height:30
+                    pos_hint : {"center_x":0.5}
+                    background_normal:""
+                    background_color:(0,0,0,0)
+                    id : verbone
+                    text: root.verb1
+                    font_size :"15"
+                    color: (255,255,255,1)
+                    multiline : False
+            Label:
+                id:labelverbtwo
+                text:"Verb2"
+                background_normal:""
+                background_color:(0,0,0,0)
+                color : (11/255,32/255,39/255,1)
+                canvas.before:
+                    Color:
+                        rgba: (207/255,215/255,199/255,1)
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10]
+            
+            GridLayout:
+                color: (255,255,255,1)
+                row_default_height : 30
+                cols : 1
+                spacing:10
+                padding : 10
+                canvas.before:
+                    Color:
+                        rgba: (207/255,215/255,199/255,1)
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10]
+                Label:
+                    size_hint_y: None
+                    height:30
+                    pos_hint : {"center_x":0.5}
+                    background_normal:""
+                    background_color:(0,0,0,0)
+                    id : verbtwo
+                    text: root.verb2
+                    font_size:"15"
+                    color: (255,255,255,1)
+                    multiline : False
+            
+            Label:
+                id:labelverbtri
+                text:"Verb3"
+                background_normal:""
+                background_color:(0,0,0,0)
+                color : (11/255,32/255,39/255,1)
+                canvas.before:
+                    Color:
+                        rgba: (207/255,215/255,199/255,1)
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10]
+            
+            GridLayout:
+                color: (255,255,255,1)
+                row_default_height : 30
+                cols : 1
+                spacing:10
+                padding : 10
+                canvas.before:
+                    Color:
+                        rgba: (207/255,215/255,199/255,1)
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10]
+                Label:
+                    size_hint_y: None
+                    height:30
+                    pos_hint : {"center_x":0.5}
+                    background_normal:""
+                    background_color:(0,0,0,0)
+                    id : verbtri
+                    text: root.verb3
+                    font_size:"15"
+                    color: (255,255,255,1)
+                    multiline : False
+        
+        GridLayout:
+            size: root.width,root.height
+            cols:1
+            padding:10
+            spacing:20
+            Button:
+                #size_hint: 0.2,0.1
+                size_hint_y: None
+                height:40
+                pos_hint : {"center_x":0.5}
+                text : 'Menu Utama'
+                color : (11/255,32/255,39/255,1)
+                font_size:'15'
+                on_press: root.btn_back()
+                on_release: 
+                    app.root.current = 'first'
+                    root.manager.transition.direction = "right"                        
+                background_normal:""
+                background_color:(0,0,0,0)
+                canvas.before:
+                    Color:
+                        rgba: (207/255,215/255,199/255,1)
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10]
+            Button:
+                #size_hint: 0.2,0.1
+                size_hint_y: None
+                height:40
+                pos_hint : {"center_x":0.5}
+                text : 'Tampilkan Hasil'
+                color : (11/255,32/255,39/255,1)
+                font_size:'15'
+                on_press: root.outhasil()
+                on_release: 
+                    #app.root.current = 'tilu'
+                    root.outhasil()
+                background_normal:""
+                background_color:(0,0,0,0)
+                canvas.before:
+                    Color:
+                        rgba: (207/255,215/255,199/255,1)
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10]
+
+
+        
